@@ -31,8 +31,8 @@ router.post('/new', function(req, res){
     })
 })
 
-router.put('/update', function(req, res){
-    let sql = `UPDATE user SET username = ('${req.body.username}'), email = ('${req.body.email}'), password = ('${req.body.password}') WHERE id_user = ('${req.body.id_user}')`;
+router.put('/update/:id', function(req, res){
+    let sql = `UPDATE user SET username = ('${req.body.username}'), email = ('${req.body.email}'), password = ('${req.body.password}') WHERE id_user = ('${req.params.id_user}')`;
     // let values = [
     //     req.body.username,
     //     req.body.email,
@@ -48,8 +48,8 @@ router.put('/update', function(req, res){
     })
 })
 
-router.delete('/delete', function(req, res){
-    let sql = `DELETE FROM user WHERE id_user = ('${req.body.id_user}')`;
+router.delete('/delete/:id', function(req, res){
+    let sql = `DELETE FROM user WHERE id_user = ('${req.params.id_user}')`;
     // let where = [
     // req.body.username,
     // req.body.email,
